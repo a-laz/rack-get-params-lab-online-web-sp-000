@@ -16,6 +16,7 @@ class Application
       resp.write handle_search(search_term)
     elsif req.path.match(/cart/)
       if @@cart.size > 0
+        resp.write "The following items are in your cart: \n"
         @@cart.each do |cart_item|
           resp.write "#{cart_item}\n"
         end
